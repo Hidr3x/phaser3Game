@@ -17,7 +17,7 @@ var config = {
     // parent: "phaser-example",
 
   mode: Phaser.Scale.ENVELOPER,
-    autoCenter: Phaser.Scale.CENTER_HORIZONTALLY,
+     autoCenter: Phaser.Scale.CENTER_BOTH,
 
     // Or put game size here
     // width: 1024,
