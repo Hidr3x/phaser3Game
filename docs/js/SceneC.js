@@ -13,9 +13,31 @@ class SceneC extends Phaser.Scene {
     this.load.image("Lexy-message2", "assets/phrases2.png");
     this.load.image("Idea", "assets/girlIdea.png");
     this.load.image("lamp", "assets/pngwing.com.png");
+    this.load.image("fullscreen", "assets/pngwing.com.png");
   }
 
   create() {
+    var button = this.add
+      .image(650, -60, "fullscreen", 0)
+      .setOrigin(1, 0)
+      .setInteractive()
+      .setScale(0.1);
+
+    button.on(
+      "pointerup",
+      function () {
+        if (this.scale.isFullscreen) {
+          button.setFrame(0);
+
+          this.scale.stopFullscreen();
+        } else {
+          button.setFrame(1);
+
+          this.scale.startFullscreen();
+        }
+      },
+      this
+    );
     var image0 = this.add
       .sprite(0, 0, "background")
       .setOrigin(0, 0)
@@ -43,24 +65,16 @@ class SceneC extends Phaser.Scene {
       .setScale(0.55)
       .setAlpha(0);
 
-      var image8 = this.add.image(300, 550, "Idea").setScale(0.55).setAlpha(0);
-      var image9 = this.add
-      .image(500, 100, "lamp")
-      .setScale(0.1)
-      .setAlpha(0);
+    var image8 = this.add.image(300, 550, "Idea").setScale(0.55).setAlpha(0);
+    var image9 = this.add.image(500, 100, "lamp").setScale(0.1).setAlpha(0);
 
+    this.tweens.add({
+      targets: image0,
+      // delay: 18000,
+      ease: "Power2",
+      // alpha:1,
+    });
 
-
-
-
-      this.tweens.add({
-        targets: image0,
-        // delay: 18000,
-        ease: "Power2",
-        // alpha:1,
-        
-      });
-  
     this.tweens.add({
       targets: image1,
       x: 300,
@@ -139,31 +153,23 @@ class SceneC extends Phaser.Scene {
       targets: image8,
       yoyo: true,
       delay: 15000,
-     hold:800,
-     duration:250,
+      hold: 800,
+      duration: 250,
       ease: "Power2",
-alpha:1,
+      alpha: 1,
       repeat: 0,
       repeatDelay: 200,
-       depth:15
+      depth: 15,
     });
     this.tweens.add({
       targets: image9,
       yoyo: true,
-      hold:800,
+      hold: 800,
       delay: 15000,
       ease: "Power2",
-      duration:300,
+      duration: 300,
       alpha: 1,
-      
     });
-    // this.input.on(
-    //   "pointerdown",
-    //   function () {
-    //     this.input.stopPropagation();
-    //     this.scene.switch("SceneA");
-    //   },
-    //   this
-    // );
+ 
   }
 }
