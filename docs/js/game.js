@@ -16,8 +16,8 @@ var config = {
     // Or set parent divId here
     // parent: "phaser-example",
 
-    mode: Phaser.Scale.FIT,
-    autoCenter: Phaser.Scale.CENTER_VERTICALLY,
+  mode: Phaser.Scale.ENVELOPER,
+    autoCenter: Phaser.Scale.CENTER_HORIZONTALLY,
 
     // Or put game size here
     // width: 1024,
