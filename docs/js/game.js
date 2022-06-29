@@ -4,8 +4,9 @@ var config = {
   width: 600,
   height: 900,
   scale: {
-    mode: Phaser.Scale.ENVELOPER,
+     mode: Phaser.Scale.FIT,
     autoCenter: Phaser.Scale.CENTER_BOTH,
+
 
     zoom: 1,
   },
