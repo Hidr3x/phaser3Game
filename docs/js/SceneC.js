@@ -13,15 +13,11 @@ class SceneC extends Phaser.Scene {
     this.load.image("Lexy-message2", "assets/phrases2.png");
     this.load.image("Idea", "assets/girlIdea.png");
     this.load.image("lamp", "assets/pngwing.com.png");
-    this.load.image("fullscreen", "assets/pngwing.com.png");
+    this.load.spritesheet('fullscreen', 'assets/fullscreen.png', { frameWidth: 64, frameHeight: 64 });
   }
 
   create() {
-    var button = this.add
-      .image(650, -60, "fullscreen", 0)
-      .setOrigin(1, 0)
-      .setInteractive()
-      .setScale(0.1);
+    var button = this.add.image(580, 20, 'fullscreen').setOrigin(1, 0).setInteractive().setScale(0.5).setDepth(50);
 
     button.on(
       "pointerup",
