@@ -12,6 +12,38 @@ var config = {
   parent: "phaser-example",
   width: 600,
   height: 900,
+  scale: {
+    // Or set parent divId here
+    // parent: "phaser-example",
+
+    mode: Phaser.Scale.FIT,
+    autoCenter: Phaser.Scale.CENTER_VERTICALLY,
+
+    // Or put game size here
+    // width: 1024,
+    // height: 768,
+
+    // Minimum size
+    // min: {
+    //     width: 800,
+    //     height: 600
+    // },
+    // // Or set minimum size like these
+    // // minWidth: 800,
+    // // minHeight: 600,
+
+    // // Maximum size
+    // max: {
+    //     width: 1600,
+    //     height: 1200
+    // },
+    // Or set maximum size like these
+    // maxWidth: 1600,
+    // maxHeight: 1200,
+
+    zoom: 1,  // Size of game canvas = game size * zoom
+},
+// autoRound: false,
   scene: [
     SceneC,
     Boot2,
