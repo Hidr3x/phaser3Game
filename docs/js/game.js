@@ -34,7 +34,7 @@ var config = {
     SceneL1,
     SceneL2,
     SceneL11,
-    SceneL22
+    SceneL22,
   ],
 };
 
